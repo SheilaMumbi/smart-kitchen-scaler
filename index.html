@@ -14,7 +14,37 @@
     </header>
 
     <main id="app-container">
-        </main>
+        
+        <section class="servings-section">
+            <div class="input-group">
+                <label for="original-servings">Original Servings</label>
+                <input type="number" id="original-servings" value="4" min="1">
+            </div>
+            
+            <div class="input-group">
+                <label for="target-servings">Target Servings</label>
+                <input type="number" id="target-servings" value="4" min="1">
+            </div>
+        </section>
+
+        <section class="ingredients-section">
+            <h2>Ingredients</h2>
+            
+            <div id="ingredient-list">
+                <div class="ingredient-row">
+                    <input type="text" class="ingredient-name" placeholder="e.g., Flour">
+                    <input type="number" class="ingredient-amount" placeholder="Amount" step="any">
+                    <input type="text" class="ingredient-unit" placeholder="Unit (e.g., cups)">
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button id="add-ingredient-btn" type="button">+ Add Ingredient</button>
+                <button id="scale-recipe-btn" type="button" class="primary-btn">Scale Recipe</button>
+            </div>
+        </section>
+
+    </main>
 
     <script src="app.js"></script>
 </body>
