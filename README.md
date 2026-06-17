@@ -19,3 +19,4 @@ An energetic, responsive web application designed to help chefs and bakers insta
 - **CSS3:** Custom grid architectures, modern UI glassmorphic cards, and smooth `@keyframes` background gradients.
 - **Vanilla JavaScript:** Event-driven element generation and math interpolation.
 
+**Deployed App** - https://sheilamumbi.github.io/smart-kitchen-scaler/
