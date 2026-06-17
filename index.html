@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Kitchen Scaler</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,34 +15,68 @@
     </header>
 
     <main id="app-container">
-        
-        <section class="servings-section">
-            <div class="input-group">
-                <label for="original-servings">Original Servings</label>
-                <input type="number" id="original-servings" value="4" min="1">
+
+        <section class="card servings-section">
+            <p class="section-label">Servings</p>
+            <div class="servings-row">
+                <div class="serving-group">
+                    <label for="original-servings">Original</label>
+                    <input type="number" id="original-servings" value="4" min="1">
+                </div>
+                <div class="arrow-mid">
+                    <i class="ti ti-arrow-right"></i>
+                </div>
+                <div class="serving-group">
+                    <label for="target-servings">Target</label>
+                    <input type="number" id="target-servings" value="8" min="1">
+                </div>
             </div>
-            
-            <div class="input-group">
-                <label for="target-servings">Target Servings</label>
-                <input type="number" id="target-servings" value="4" min="1">
+            <div class="badge-row">
+                <span class="factor-badge factor-up" id="factor-badge">2× scale</span>
+            </div>
+            <div class="options-row">
+                <label class="toggle-label">
+                    <input type="checkbox" id="use-fractions" checked>
+                    Show fractions (½, ⅓…)
+                </label>
+                <label class="toggle-label">
+                    <input type="checkbox" id="use-metric">
+                    Convert to metric
+                </label>
             </div>
         </section>
 
-        <section class="ingredients-section">
-            <h2>Ingredients</h2>
-            
-            <div id="ingredient-list">
-                <div class="ingredient-row">
-                    <input type="text" class="ingredient-name" placeholder="e.g., Flour">
-                    <input type="number" class="ingredient-amount" placeholder="Amount" step="any">
-                    <input type="text" class="ingredient-unit" placeholder="Unit (e.g., cups)">
-                </div>
+        <section class="card ingredients-section">
+            <p class="section-label">Ingredients</p>
+            <div class="ing-header">
+                <span>Ingredient</span>
+                <span>Amount</span>
+                <span>Unit</span>
+                <span></span>
             </div>
-
+            <div id="ingredient-list"></div>
             <div class="button-group">
-                <button id="add-ingredient-btn" type="button">+ Add Ingredient</button>
-                <button id="scale-recipe-btn" type="button" class="primary-btn">Scale Recipe</button>
+                <button id="add-ingredient-btn" type="button">
+                    <i class="ti ti-plus"></i> Add ingredient
+                </button>
+                <button id="reset-btn" type="button">
+                    <i class="ti ti-refresh"></i> Reset
+                </button>
+                <button id="scale-recipe-btn" type="button" class="primary-btn">
+                    <i class="ti ti-check"></i> Scale recipe
+                </button>
             </div>
+        </section>
+
+        <section class="card results-card" id="results-card" style="display:none">
+            <p class="section-label">Scaled ingredients</p>
+            <div class="result-header-row">
+                <span>Name</span>
+                <span>Original</span>
+                <span>Scaled</span>
+                <span>Unit</span>
+            </div>
+            <div id="results-list"></div>
         </section>
 
     </main>
